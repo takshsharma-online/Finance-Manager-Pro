@@ -56,7 +56,7 @@ public class Transaction {
     //Following is an Overridden toString method.
     @Override
     public String toString(){
-        return "Transaction Details: ID: " + id + "Date: " + date + "Type: " + type + "Category: " + category + "Amount: " + amount + "Description: " + description ;
+        return "Transaction Details: ID: " + id + "Date: " + date + " Type: " + type + " Category: " + category + " Amount: " + amount + " Description: " + description ;
     }
 
 
