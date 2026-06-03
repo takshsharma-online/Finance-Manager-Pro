@@ -6,5 +6,6 @@ public class Main {
         if(conn != null) {
             System.out.println("Connected!");
         }
+        DatabaseManager.createTransactionsTable();
     }
 }
