@@ -29,9 +29,40 @@ public class TransactionDAO {
             e.printStackTrace();
         }
     }
+    public void updateTransaction(Transaction transaction){
+        String sql = """
+                UPDATE transactions
+                            SET date = ?,
+                                type = ?,
+                                category = ?,
+                                amount = ?,
+                                description = ?     
+                            WHERE id = ?
+                """;
+        try (
+                Connection conn = DatabaseManager.connect();
+                PreparedStatement pstmt = conn.prepareStatement(sql)
+        ) {
+            pstmt.setString(1, transaction.getDate());
+            pstmt.setString(2, transaction.getType());
+            pstmt.setString(3, transaction.getCategory());
+            pstmt.setDouble(4, transaction.getAmount());
+            pstmt.setString(5, transaction.getDescription());
+            pstmt.setInt(6, transaction.getId());
+            int rowsAffected = pstmt.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Transaction updated successfully!");
+            } else {
+                System.out.println("Transaction not found.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public List<Transaction> getAllTransactions() {
- List<Transaction> transactions = new ArrayList<>();
- String sql = "SELECT * FROM transactions";
+        List<Transaction> transactions = new ArrayList<>();
+        String sql = "SELECT * FROM transactions";
         try (
                 Connection conn = DatabaseManager.connect();
                 Statement stmt = conn.createStatement();
@@ -53,4 +84,5 @@ public class TransactionDAO {
             e.printStackTrace();
         }
         return transactions;
-    }}
+      }
+}
