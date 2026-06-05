@@ -10,17 +10,35 @@ public class Main {
         }
         DatabaseManager.createTransactionsTable();
         //Test for transactions.
-        Transaction transaction =
-                new Transaction(
-                        0,
-                        "2025-06-02",
-                        "Expense",
-                        "Food",
-                        15.50,
-                        "Lunch"
-                );
+
         TransactionDAO dao = new TransactionDAO();
-        dao.addTransaction(transaction);
+        new Transaction(
+                1,
+                "2026-06-04",
+                "Expense",
+                "Food",
+                20.00,
+                "Updated lunch cost"
+        );
+        Transaction updatedTransaction =
+
+                new Transaction(
+
+                        1,
+
+                        "2026-06-04",
+
+                        "Expense",
+
+                        "Food",
+
+                        20.00,
+
+                        "Updated lunch cost"
+
+                );
+        dao.updateTransaction(updatedTransaction);
+
         System.out.println(dao.getAllTransactions());
     }
 }
