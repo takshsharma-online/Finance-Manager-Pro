@@ -48,3 +48,31 @@ Following is a brief description of the process that happened in the background-
 1. The row with id = 1 was found.
 2. The DELETE query executed successfully.
 3. The row with id = '1' was deleted.
+
+## 6th June 2026
+**Completed**
+* Created FinanceService class and added methods to calculate total income, expense and  current balance. 
+* Created TransactionType enum (INCOME, EXPENSE).
+* Created Category enum for income and expense categorization.
+* Created Currency enum with support for GBP, USD, EUR and INR.
+* Added currency names and symbols to Currency enum.
+* Created budgets table in SQLite Database.
+* Implemented Budget.java and added constructor, getters, setters and toString() method.
+* Implemented BudgetDAO and added functionality to insert budgets and retrieve budgets from a database.
+  ![Database Connection](../screenshots/budget_test.png)
+* In the screenshot above, it can be clearly seen that the test for adding a new budget was successful (The test was added in Main.java).
+
+**Challenges**
+* Understanding DAO and service layer separation.
+* Planning budget management features for future dashboard integration.
+* Deciding hw to support multiple currencies while maintaining clean code structure.
+
+**New Objectives**
+* Implement updateBudget() functionality.
+* Implement deleteBudget() functionality.
+* Integrate budget calculations into FinanceService.
+* Calculate remaining budget per category.
+* Design transaction entry forms with dropdown sections.
+* Create a dashboard layout for balance, income, expenses and budget overview.
+
+
