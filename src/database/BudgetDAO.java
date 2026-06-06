@@ -27,5 +27,31 @@ public class BudgetDAO {
         }
 
     }
+    //Following is a method to get all budget.
+    public List<Budget> getAllBudgets(){
+        List<Budget> budgets = new ArrayList<>();
+        String sql = "SELECT * FROM budgets";
+        try (
+                Connection conn = DatabaseManager.connect();
+                PreparedStatement pstmt = conn.prepareStatement(sql);
+                ResultSet rs = pstmt.executeQuery()
+        ) {
+            while (rs.next()) {
+                Budget budget =
+                        new Budget(
+                                rs.getInt("id"),
+                                rs.getString("category"),
+                                rs.getDouble("monthly_limit"),
+                                model.Currency.valueOf(
+                                        rs.getString("currency")
+                                )
+                        );
+                budgets.add(budget);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return budgets;
+    }
 
 }
