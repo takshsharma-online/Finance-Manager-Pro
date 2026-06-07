@@ -11,13 +11,12 @@ public class Main {
         BudgetDAO dao= new BudgetDAO();
         Budget foodBudget =
                 new Budget(
-                        0,
-                        "Food",
-                        300,
-                        Currency.EUR
+                        1,
+                        "FOOD",
+                        400,
+                        Currency.GBP
                 );
-        dao.addBudget(foodBudget);
-        System.out.println(dao.getAllBudgets());
+        dao.updateBudget(foodBudget);
 
 
     }
