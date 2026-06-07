@@ -75,4 +75,34 @@ Following is a brief description of the process that happened in the background-
 * Design transaction entry forms with dropdown sections.
 * Create a dashboard layout for balance, income, expenses and budget overview.
 
+## 7th June 2026
+**Completed**
+* Implemented udateBudget() method.
+
+![Database Connection](../screenshots/update_budget.png)
+* The above screenshot displays that the budget created previous with id = 1 has been updated.
+* Implemented a test for updateBudget() method in Main.java.
+* Implemented deleteBudget() method.
+
+![Database Connection](../screenshots/delete_budget.png)
+* The above screenshot displays that the budget created previous with id = 1 has been deleted.
+* Implemented test for deleteBudget() method in Main.java.
+
+**Challenges**
+* Issues with implementing the tests due to a database error. (Resolved)
+
+**New Objectives**
+* Integrate budget calculations into FinanceService.
+* Calculate total spending by category.
+* Calculate remaining budget by category.
+* Implement transaction analytics:
+  * Transaction count
+  * Largest expense
+  * Average expense
+* Begin planning JavaFX user interface structure.
+* Design dashboard layout for balance, budgets and transaction summaries.
+
+
+
+
 
