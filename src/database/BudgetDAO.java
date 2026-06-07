@@ -80,4 +80,25 @@ public class BudgetDAO {
             e.printStackTrace();
         }
     }
+    //Following is a method to delete a budget using its ID.
+    public void deleteBudget(int id){
+        String sql = """
+            DELETE FROM budgets
+            WHERE id = ?
+            """;
+        try (
+                Connection conn = DatabaseManager.connect();
+                PreparedStatement pstmt = conn.prepareStatement(sql)
+        ) {
+            pstmt.setInt(1, id);
+            int rowsAffected = pstmt.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Budget deleted successfully!");
+            } else {
+                System.out.println("Budget not found.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
