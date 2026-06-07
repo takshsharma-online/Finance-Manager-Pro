@@ -53,5 +53,31 @@ public class BudgetDAO {
         }
         return budgets;
     }
-
+    //Following is a method to update budget.
+    public void updateBudget(Budget budget){
+        String sql = """
+                UPDATE budgets
+                SET category = ?,
+                monthly_limit = ?,
+                currency = ?
+                WHERE id = ?
+                """;
+        try (
+                Connection conn = DatabaseManager.connect();
+                PreparedStatement pstmt = conn.prepareStatement(sql)
+        ) {
+            pstmt.setString(1, budget.getCategory());
+            pstmt.setDouble(2, budget.getMonthlyLimit());
+            pstmt.setString(3, budget.getCurrency().name());
+            pstmt.setInt(4, budget.getId());
+            int rowsAffected = pstmt.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Budget updated successfully!");
+            } else {
+                System.out.println("Budget not found.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
