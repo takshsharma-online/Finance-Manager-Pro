@@ -12,5 +12,8 @@ public class Main {
         //Following is a test to get transactions count.
         FinanceService financeService = new FinanceService();
         System.out.println("Transactions: " + financeService.getTransactionCount());
+        //Following is the test for largestExpense() method.
+        System.out.println("Largest Expense: " + financeService.getLargestExpense()
+        );
 }
 }
