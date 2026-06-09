@@ -40,4 +40,22 @@ public class FinanceService {
     public int getTransactionCount(){
         return transactionDAO.getAllTransactions().size();
     }
+    //Following is a method to get the Largest Expense.
+    public double getLargestExpense() {
+        double largestExpense = 0;
+        for (Transaction transaction :
+                transactionDAO.getAllTransactions()) {
+            if (
+                    transaction.getType()
+                            .equalsIgnoreCase("Expense")
+                            &&
+                            transaction.getAmount()
+                                    > largestExpense
+            ) {
+                largestExpense =
+                        transaction.getAmount();
+            }
+        }
+        return largestExpense;
+    }
 }
