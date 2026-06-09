@@ -7,12 +7,12 @@
 - [x] Finance Service
 
 ## Phase 2 - Analytics
-- [] Average Expense
-- [] Largest Expense
-- [] Spending by Category
+- [x] Average Expense
+- [x] Largest Expense
+- [x] Spending by Category
 
 ## Phase 3 - JavaFX UI
-- [] Dashboard
+- [x] Dashboard
 - [] Transaction Management
 - [] Budget Management
 
