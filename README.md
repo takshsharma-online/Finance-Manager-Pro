@@ -1,4 +1,6 @@
 # Finance-Manager-Pro
+Project Status: (docs/project-status.md)
+
 A personal finance management application that helps users track expenses, manage budgets, calculate loans/mortgages, and receive AI-powered financial insights.
 
 **Purpose-** This application has been designed to help users effectively manage, monitor and improve their financial well-being through a combination of expense tracking,
