@@ -16,5 +16,7 @@ public class Main {
         System.out.println("Largest Expense: " + financeService.getLargestExpense()
         );
         System.out.println("Average Expense: " + financeService.getAverageExpense());
+        //Following is a test to get total transactions by category.
+        System.out.println("Food Expenses: " + financeService.getTotalExpenseByCategory("FOOD"));
 }
 }
