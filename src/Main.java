@@ -15,5 +15,6 @@ public class Main {
         //Following is the test for largestExpense() method.
         System.out.println("Largest Expense: " + financeService.getLargestExpense()
         );
+        System.out.println("Average Expense: " + financeService.getAverageExpense());
 }
 }
