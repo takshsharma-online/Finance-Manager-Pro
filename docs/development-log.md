@@ -59,6 +59,7 @@ Following is a brief description of the process that happened in the background-
 * Created budgets table in SQLite Database.
 * Implemented Budget.java and added constructor, getters, setters and toString() method.
 * Implemented BudgetDAO and added functionality to insert budgets and retrieve budgets from a database.
+
   ![Database Connection](../screenshots/budget_test.png)
 * In the screenshot above, it can be clearly seen that the test for adding a new budget was successful (The test was added in Main.java).
 
@@ -101,6 +102,67 @@ Following is a brief description of the process that happened in the background-
   * Average expense
 * Begin planning JavaFX user interface structure.
 * Design dashboard layout for balance, budgets and transaction summaries.
+
+## 9th June 2026
+**Completed**
+* Created additional project documentation:
+- project-overivew.md
+- database_schema.md
+- features-roadmap.md
+
+* Implemented a method to count all the transactions from the database.
+* Implemented a test in Main.java to count all the transactions
+
+![Database Connection](../screenshots/output_count.png)
+![Database Connection](../screenshots/total_transactions.png)
+
+* In the above two screenshots, the first image displays the current number of transactions in the database and the second image proves that the method is working correctly as there are 3 transactions only at this stage.
+* Implemented a method to get average expense from the database.
+* Implemented a test in Main.java to calculate average expense from the database.
+
+![Database Connection](../screenshots/expense_test.png)
+* The above screenshot shows the output for the average expense method's test in Main.java.
+* Implemented a method to get remaining budget.
+* Added JavaFX files to the libraries.
+* Downloaded and configured JavaFX SDK 26.0.1.
+* Added JavaFX libraries to InteliJ project.
+* Configured JavaFX runtime and VM options.
+* Implemented a test in MainFX.java to create a temporary window.
+
+![Database Connection](../screenshots/MainFX.png)
+* Above is the screenshot for the temporary window created in the MainFX.java.
+* Created ui package for frontend development.
+* Created initial DashboardView.java.
+
+![Database Connection](../screenshots/initial-dashboard.png)
+* Above is the screenshot for the initial dashboard created. 
+* Established frontend project structure for future screens.
+* Created project-status.md for a detailed overlook for the viewers.
+
+**Challenges**
+* Troubleshooting JavaFX runtime configuration.
+* Resolving "JavaFX runtime components are missing" error.
+* Configuring JavaFX module path correctly InteliJ.
+* Understanding JavaFX application lifecycle (Application, Stage, Scene).
+* Organizing project structure for backend and frontend separation.
+
+**Lessons Learned**
+* JavaFX applications require module-path configuration runtime.
+* Stage represents the application window.
+* Scene represents the contents of a window.
+* Layout containers such as VBox automatically arrange components.
+* Separating backend logic from UI components improves maintainability.
+* JavaFX projects benefit from a dedicated UI package structure.
+
+**Next Objectives**
+* Connect DashboardView to FinanceService.
+* Display live balance data on the dashboard.
+* Display total income and expenses.
+* Display transaction count.
+* Improve dashboard layout and styling.
+* Create reusable dashboard cards.
+* Begin development of transaction management screen.
+* Begin development of budget management screen.
 
 
 
