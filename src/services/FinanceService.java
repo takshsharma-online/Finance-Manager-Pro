@@ -83,4 +83,8 @@ public class FinanceService {
         }
         return total;
     }
+    //Following is a method to get remaining budget.
+    public double getRemainingBudget(String category, double budgetLimit){
+        return budgetLimit - getTotalExpenseByCategory(category);
+    }
 }
