@@ -58,4 +58,19 @@ public class FinanceService {
         }
         return largestExpense;
     }
+    //Following is a method to find average expense.
+    public double getAverageExpense(){
+        double totalExpenses = 0;
+        int expenseCount = 0;
+        for (Transaction transaction : transactionDAO.getAllTransactions()) {
+            if (transaction.getType().equalsIgnoreCase("Expense")) {
+                totalExpenses += transaction.getAmount();
+                expenseCount++;
+            }
+        }
+        if (expenseCount == 0) {
+            return 0;
+        }
+        return totalExpenses / expenseCount;
+    }
 }
