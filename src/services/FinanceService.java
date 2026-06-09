@@ -73,4 +73,14 @@ public class FinanceService {
         }
         return totalExpenses / expenseCount;
     }
+    //Following is a method to get total expense by category.
+    public double getTotalExpenseByCategory(String category){
+        double total = 0;
+        for(Transaction transaction : transactionDAO.getAllTransactions()){
+            if (transaction.getType().equalsIgnoreCase("Expense") && transaction.getCategory().equalsIgnoreCase(category)){
+                total += transaction.getAmount();
+            }
+        }
+        return total;
+    }
 }
