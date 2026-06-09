@@ -4,21 +4,13 @@ import database.TransactionDAO;
 import model.Budget;
 import model.Currency;
 import model.Transaction;
+import services.FinanceService;
+
 import java.sql.Connection;
 public class Main {
     public static void main(String[] args) {
-    //Following is a test for new budget classes.
-        BudgetDAO dao = new BudgetDAO();
-
-        System.out.println("Before:");
-
-        System.out.println(dao.getAllBudgets());
-
-        dao.deleteBudget(1);
-
-        System.out.println("After:");
-
-        System.out.println(dao.getAllBudgets());
-
+        //Following is a test to get transactions count.
+        FinanceService financeService = new FinanceService();
+        System.out.println("Transactions: " + financeService.getTransactionCount());
 }
 }
