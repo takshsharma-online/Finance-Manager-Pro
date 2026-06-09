@@ -32,8 +32,12 @@ public class FinanceService {
         return total;//Returns the final income total.
 }
 //Following is a method to calculate current balance.
-    public double getCurrentBaalance(){
+    public double getCurrentBalance(){
         //Balance = Income - Expenses
         return getTotalIncome() - getTotalExpense();
+    }
+    //Following is a method to get total number of Transactions stored.
+    public int getTransactionCount(){
+        return transactionDAO.getAllTransactions().size();
     }
 }
