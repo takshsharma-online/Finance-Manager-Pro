@@ -183,6 +183,9 @@ Following is a brief description of the process that happened in the background-
   * Description input field
   * Add Transaction button
 * Prepared the UI for database integration.
+  ![Database Connection](../screenshots/add-transaction.png)
+* The above screenshot shows the basic add transaction page with button.
+
 
 **Challenges**
 * Encountered JavaFX runtime component errors.
