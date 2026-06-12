@@ -164,6 +164,37 @@ Following is a brief description of the process that happened in the background-
 * Begin development of transaction management screen.
 * Begin development of budget management screen.
 
+## 12th June 2026
+**Completed**
+* Created DashboardView.
+* Connected DashboardView to FinanceService.
+* Displayed live financial data from the SQLite database.
+* Integrated:
+  * Current Balance
+  * Total Income
+  * Total Expenses
+  * Transaction Count
+* Designed the initial Transaction Management screen.
+* Added:
+  * Date input field
+  * Type dropdown (Income / Expense)
+  * Category dropdown
+  * Amount input field
+  * Description input field
+  * Add Transaction button
+* Prepared the UI for database integration.
+
+**Challenges**
+* Encountered JavaFX runtime component errors.
+* Resolved IntelliJ VM option configuration issues.
+
+**New Objectives**
+* Connect Add Transaction button to TransactionDAO.
+* Allow transactions to be inserted through the JavaFX interface.
+* Create Budget Management screen UI.
+* Begin navigation between Dashboard, Transactions, and Budgets.
+* Improve dashboard styling and layout.
+
 
 
 
