@@ -198,7 +198,22 @@ Following is a brief description of the process that happened in the background-
 * Begin navigation between Dashboard, Transactions, and Budgets.
 * Improve dashboard styling and layout.
 
+## 13th June 2026
+**Completed**
+* Connected the add transaction button in the TransactionView.java to the database.
 
+ ![Database Connection](../screenshots/transaction-done.png)
+* In the above screenshot, it can be clearly seen that the button is working and the data entered has been added to the database.
+
+![Database Connection](../screenshots/transaction-income.png)
+* The above screenshot is from the SQLite, database that confirms the data entered was successfully added to the database.
+
+**Challenges**
+* None
+
+**New Objectives**
+* Begin navigation between Dashboard, Transactions, and Budgets.
+* Improve dashboard styling and layout.
 
 
 
