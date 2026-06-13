@@ -13,7 +13,7 @@
 
 ## Phase 3 - JavaFX UI
 - [x] Dashboard
-- [] Transaction Management
+- [x] Transaction Management
 - [] Budget Management
 
 ## Phase 4 - Financial Tools

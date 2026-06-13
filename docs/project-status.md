@@ -47,7 +47,7 @@ Completion Estimate: 45%
 - [x] JavaFX Installation
 - [x] MainFX Setup
 - [x] DashboardView Creation
-- [ ] Dashboard Connected To FinanceService
+- [x] Dashboard Connected To FinanceService
 - [ ] Dashboard Styling
 - [ ] Transaction Screen
 - [ ] Budget Screen
