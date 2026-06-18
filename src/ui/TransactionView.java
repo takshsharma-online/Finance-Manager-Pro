@@ -110,7 +110,45 @@ public class TransactionView extends VBox {
         transactionTable.setItems(transactions);
         //Add transaction button.
         Button addButton = new Button("Add Transaction");
-
+        //Delete transaction button.
+        Button deleteButton =
+                new Button("Delete Selected");
+        deleteButton.setOnAction(event -> {
+            Transaction selectedTransaction =
+                    transactionTable
+                            .getSelectionModel()
+                            .getSelectedItem();
+            if (selectedTransaction != null) {
+                dao.deleteTransaction(
+                        selectedTransaction.getId()
+                );
+                transactions.setAll(
+                        dao.getAllTransactions()
+                );
+                Alert alert =
+                        new Alert(
+                                Alert.AlertType.INFORMATION
+                        );
+                alert.setTitle("Success");
+                alert.setHeaderText(null);
+                alert.setContentText(
+                        "Transaction deleted successfully!"
+                );
+                alert.showAndWait();
+            } else {
+                Alert alert =
+                        new Alert(
+                                Alert.AlertType.WARNING
+                        );
+                alert.setTitle("Warning");
+                alert.setHeaderText(null);
+                alert.setContentText(
+                        "Please select a transaction."
+                );
+                alert.showAndWait();
+            }
+        });
+//Following is the add button logic
         addButton.setOnAction(event -> {
 
             try {
@@ -184,6 +222,7 @@ public class TransactionView extends VBox {
                 descriptionLabel,
                 descriptionField,
                 addButton,
+                deleteButton,
                 transactionTable
         );
   }
