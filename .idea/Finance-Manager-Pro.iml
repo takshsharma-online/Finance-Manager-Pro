@@ -9,6 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sqlite-jdbc-3.53.1.0-natives-mac" level="project" />
     <orderEntry type="library" exported="" name="sqlite-jdbc-3.53.1.0-without-natives" level="project" />
-    <orderEntry type="library" name="javafx-swt" level="project" />
+    <orderEntry type="library" exported="" name="javafx-swt" level="project" />
   </component>
 </module>
