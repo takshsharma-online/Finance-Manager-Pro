@@ -215,5 +215,28 @@ Following is a brief description of the process that happened in the background-
 * Begin navigation between Dashboard, Transactions, and Budgets.
 * Improve dashboard styling and layout.
 
+## 18th June 2026
+**Completed**
+* Added logic to delete a transaction.
+* Added logic to load a selected transaction.
+* Added a logic to update transaction.
+* Tested all the logics.
+
+![Database Connection](../screenshots/transaction-delete.png)
+* The above screenshot clearly demonstrates the popup that comes after a transaction is deleted.
+
+![Database Connection](../screenshots/transaction-update.png)
+* The above screenshot clearly demonstrates the popup that comes after a transaction is updated.
+
+**Challenges**
+* None
+
+**New Objectives**
+* Begin navigation between Dashboard, Transactions, and Budgets.
+* Improve dashboard styling and layout.
+
+
+
+
 
 
