@@ -3,9 +3,13 @@ package ui;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
-
 import database.TransactionDAO;
 import model.Transaction;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class TransactionView extends VBox {
 
@@ -57,6 +61,53 @@ public class TransactionView extends VBox {
         //Creating a new DAO object.
         TransactionDAO dao = new TransactionDAO();
 
+//Following are the codes for transaction table.
+        TableView<Transaction> transactionTable =
+                new TableView<>();
+        TableColumn<Transaction, Integer> idColumn =
+                new TableColumn<>("ID");
+        idColumn.setCellValueFactory(
+                new PropertyValueFactory<>("id")
+        );
+        TableColumn<Transaction, String> dateColumn =
+                new TableColumn<>("Date");
+        dateColumn.setCellValueFactory(
+                new PropertyValueFactory<>("date")
+        );
+        TableColumn<Transaction, String> typeColumn =
+                new TableColumn<>("Type");
+        typeColumn.setCellValueFactory(
+                new PropertyValueFactory<>("type")
+        );
+        TableColumn<Transaction, String> categoryColumn =
+                new TableColumn<>("Category");
+        categoryColumn.setCellValueFactory(
+                new PropertyValueFactory<>("category")
+        );
+
+        TableColumn<Transaction, Double> amountColumn =
+                new TableColumn<>("Amount");
+        amountColumn.setCellValueFactory(
+                new PropertyValueFactory<>("amount")
+        );
+        TableColumn<Transaction, String> descriptionColumn =
+                new TableColumn<>("Description");
+        descriptionColumn.setCellValueFactory(
+                new PropertyValueFactory<>("description")
+        );
+        transactionTable.getColumns().addAll(
+                idColumn,
+                dateColumn,
+                typeColumn,
+                categoryColumn,
+                amountColumn,
+                descriptionColumn
+
+        );
+
+        ObservableList<Transaction> transactions = FXCollections.observableArrayList(dao.getAllTransactions());
+
+        transactionTable.setItems(transactions);
         //Add transaction button.
         Button addButton = new Button("Add Transaction");
 
@@ -77,6 +128,7 @@ public class TransactionView extends VBox {
                         );
 
                 dao.addTransaction(transaction);
+                transactions.setAll(dao.getAllTransactions());
 
                 Alert alert =
                         new Alert(
@@ -131,7 +183,8 @@ public class TransactionView extends VBox {
                 amountField,
                 descriptionLabel,
                 descriptionField,
-                addButton
+                addButton,
+                transactionTable
         );
-    }
+  }
 }
