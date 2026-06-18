@@ -60,7 +60,7 @@ public class TransactionView extends VBox {
 
         //Creating a new DAO object.
         TransactionDAO dao = new TransactionDAO();
-
+        final int[] selectedId = {0};//Helps remember which transaction is being edited.
 //Following are the codes for transaction table.
         TableView<Transaction> transactionTable =
                 new TableView<>();
@@ -113,6 +113,91 @@ public class TransactionView extends VBox {
         //Delete transaction button.
         Button deleteButton =
                 new Button("Delete Selected");
+        //Load transaction button.
+        Button loadButton = new Button("Load Selected");
+//Update transaction button.
+        Button updateButton = new Button("Update Transaction");
+        //Following is the logic to update transaction.
+        updateButton.setOnAction(event -> {
+            try {
+                Transaction transaction =
+                        new Transaction(
+                                selectedId[0],
+                                dateField.getText(),
+                                typeBox.getValue(),
+                                categoryBox.getValue(),
+                                Double.parseDouble(
+                                        amountField.getText()
+                                ),
+                                descriptionField.getText()
+                        );
+                dao.updateTransaction(transaction);
+                transactions.setAll(
+                        dao.getAllTransactions()
+                );
+                Alert alert =
+                        new Alert(
+                                Alert.AlertType.INFORMATION
+                        );
+                alert.setTitle("Success");
+                alert.setHeaderText(null);
+                alert.setContentText(
+                        "Transaction updated successfully!"
+                );
+                alert.showAndWait();
+            } catch (Exception e) {
+                Alert alert =
+                        new Alert(
+                                Alert.AlertType.ERROR
+                        );
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText(
+                        "Unable to update transaction."
+                );
+                alert.showAndWait();
+            }
+        });
+//Following is the logic for loading the selected transaction.
+        loadButton.setOnAction(event -> {
+            Transaction selectedTransaction =
+                    transactionTable
+                            .getSelectionModel()
+                            .getSelectedItem();
+            if (selectedTransaction != null) {
+                selectedId[0] =
+                        selectedTransaction.getId();
+                dateField.setText(
+                        selectedTransaction.getDate()
+                );
+                typeBox.setValue(
+                        selectedTransaction.getType()
+                );
+                categoryBox.setValue(
+                        selectedTransaction.getCategory()
+                );
+                amountField.setText(
+                        String.valueOf(
+                                selectedTransaction.getAmount()
+                        )
+                );
+                descriptionField.setText(
+                        selectedTransaction.getDescription()
+                );
+            } else {
+                Alert alert =
+                        new Alert(
+                                Alert.AlertType.WARNING
+                        );
+                alert.setTitle("Warning");
+                alert.setHeaderText(null);
+                alert.setContentText(
+                        "Please select a transaction."
+                );
+                alert.showAndWait();
+            }
+        });
+        //Following is the logic for deleting transaction.
         deleteButton.setOnAction(event -> {
             Transaction selectedTransaction =
                     transactionTable
@@ -223,6 +308,8 @@ public class TransactionView extends VBox {
                 descriptionField,
                 addButton,
                 deleteButton,
+                loadButton,
+                updateButton,
                 transactionTable
         );
   }
