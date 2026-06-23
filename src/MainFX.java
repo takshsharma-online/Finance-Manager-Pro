@@ -1,19 +1,16 @@
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import ui.TransactionView;
-import ui.BudgetView;
-
+import ui.MainLayout;
 public class MainFX extends Application {
     @Override
     public void start(Stage stage) {
-        BudgetView budgetView =
-                new BudgetView();
+        MainLayout mainLayout =
+                new MainLayout();
         Scene scene =
                 new Scene(
-                        budgetView,
-                        800,
-                        600
+                        mainLayout,
+                        1000, 700
                 );
         stage.setTitle("Finance Manager Pro");
         stage.setScene(scene);
