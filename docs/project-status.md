@@ -1,7 +1,7 @@
 # Finance Manager Pro - Project Status
 ## Overall Progress
 Current Phase: Frontend Development (JavaFX)
-Completion Estimate: 45%
+Completion Estimate: 55%
 
 ---
 
@@ -50,7 +50,7 @@ Completion Estimate: 45%
 - [x] Dashboard Connected To FinanceService
 - [ ] Dashboard Styling
 - [ ] Transaction Screen
-- [ ] Budget Screen
+- [x] Budget Screen
 - [ ] Analytics Screen
 
 ---
