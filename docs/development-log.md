@@ -235,6 +235,45 @@ Following is a brief description of the process that happened in the background-
 * Begin navigation between Dashboard, Transactions, and Budgets.
 * Improve dashboard styling and layout.
 
+## 23rd June 2026
+**Completed**
+
+![Database Connection](../screenshots/create-budget.png)
+* The above screenshot shows the interface for creating a new budget.
+
+  ![Database Connection](../screenshots/navigation.png)
+* The above screenshot displays the navigation structure.
+* Added JavaFX TableView to the Transaction Management screen.
+* Displayed saved transactions inside the application.
+* Connected transaction table to TransactionDAO.getAllTransactions().
+* Added automatic table refresh after adding transactions.
+* Implemented delete selected transaction functionality in JavaFX.
+* Implemented load selected transaction functionality.
+* Implemented update transaction functionality through the JavaFX interface.
+* Completed full Transaction CRUD functionality in the JavaFX UI.
+* Created Budget Management UI.
+* Added budget form fields for category, monthly limit and currency.
+* Added Budget TableView.
+* Connected BudgetView to BudgetDAO.
+* Implemented add, load, update and delete budget functionality through JavaFX.
+* Created MainLayout navigation system.
+* Added navigation buttons for Dashboard, Transactions and Budgets.
+* Updated MainFX to load MainLayout instead of manually switching screens.
+**Challenges**
+* Understanding JavaFX TableView structure.
+* Connecting selected table rows to update and delete operations.
+* Managing UI refresh after database changes.
+* Moving from single-screen testing to multi-screen navigation.
+
+**New Objectives**
+* Improve dashboard styling.
+* Add dashboard cards for balance, income, expenses and transactions.
+* Improve spacing and layout across all screens.
+* Add basic form validation.
+* Begin planning financial calculator screen.
+
+
+
 
 
 
