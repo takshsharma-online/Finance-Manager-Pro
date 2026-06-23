@@ -2,15 +2,16 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import ui.TransactionView;
+import ui.BudgetView;
 
 public class MainFX extends Application {
     @Override
     public void start(Stage stage) {
-        TransactionView transactionView =
-                new TransactionView();
+        BudgetView budgetView =
+                new BudgetView();
         Scene scene =
                 new Scene(
-                        transactionView,
+                        budgetView,
                         800,
                         600
                 );
