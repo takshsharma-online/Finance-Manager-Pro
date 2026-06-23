@@ -14,7 +14,7 @@
 ## Phase 3 - JavaFX UI
 - [x] Dashboard
 - [x] Transaction Management
-- [] Budget Management
+- [x] Budget Management
 
 ## Phase 4 - Financial Tools
 - [] Loan Calculator
